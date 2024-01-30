@@ -15,6 +15,8 @@ pipeline {
             steps {
                 // Installer les dépendances Node.js
                 script {
+                    nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                    sh 'npm config ls'
                     sh 'npm install'
                 }
             }
