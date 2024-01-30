@@ -15,7 +15,7 @@ pipeline {
             steps {
                 // Installer les dépendances Node.js
                 script {
-                    bat 'npm install'
+                    sh 'npm install'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 // Construire l'application Node.js
                 script {
-                    bat 'npm run build'
+                    sh 'npm run build'
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 // Exécuter les tests
                 script {
-                    bat 'npm test'
+                    sh 'npm test'
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline {
                 // Déployer l'application (adapter selon vos besoins)
                 script {
                     // Exemple : Déployer sur un serveur distant
-                    bat 'scp -r dist/ utilisateur@serveur:/chemin/vers/deploy'
+                    sh 'scp -r dist/ utilisateur@serveur:/chemin/vers/deploy'
                 }
             }
         }
