@@ -10,6 +10,19 @@ pipeline {
                 }
             }
         }
+        
+        stage('Check Node.js Installation') {
+            steps {
+                script {
+                    def nodeExecutable = sh(script: 'which node', returnStatus: true)
+                    if (nodeExecutable == 0) {
+                        echo "Node.js is installed."
+                    } else {
+                        error "Node.js not found. Please install Node.js on this machine."
+                    }
+                }
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
