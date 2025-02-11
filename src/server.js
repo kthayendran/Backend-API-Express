@@ -33,7 +33,7 @@ server.use('/api/v1/animes', animeRoute);
 // ----------------------------------------------
 // Lancement du server sur le port 8081
 // ----------------------------------------------
-const port = Number(process.env.PORT || 8081);
+const port = Number(process.env.PORT || 3000);
 server.listen(port);
 
 // ----------------------------------------------
