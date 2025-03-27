@@ -15,16 +15,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                script {
-                    sh 'npm install'
-                }
+                sh 'docker build -t backend-api-express .'
             }
         }
         stage('Test') {
             steps {
-                script {
-                    sh 'npm test'
-                }
+                sh 'npm install --save-dev mocha'
+                sh 'npm run test'
             }
         }
     }
