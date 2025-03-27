@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Push') {
                     steps {
-                        withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        withCredentials([usernamePassword(credentialsId: 'docker-credential', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                             sh 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin'
                             sh 'docker tag backend-api-express kthayendran/backend-api:latest'
                             sh 'docker push kthayendran/backend-api:latest'
