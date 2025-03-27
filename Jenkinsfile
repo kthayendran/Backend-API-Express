@@ -13,15 +13,19 @@ pipeline {
                 ])
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         // TODO
-        //     }
-        // }
-        // stage('Test') {
-        //     steps {
-        //         // TODO
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                script {
+                    sh 'npm install'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    sh 'npm test'
+                }
+            }
+        }
     }
 }
