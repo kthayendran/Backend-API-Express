@@ -7,7 +7,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[
-                        url: 'VotreDépotGit',
+                        url: 'https://github.com/kthayendran/Backend-API-Express',
                         credentialsId: 'github-credentials'
                     ]]
                 ])
